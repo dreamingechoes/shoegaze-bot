@@ -29,9 +29,10 @@ function pickTweet() {
 function pickSong() {
   var playlist = require('botfiles/playlist.js'),
       index = randomIntByModulo(0, playlist.items.length);
+
   return playlist.items[index].track.artists[0].name + " · " + playlist.items[index].track.name +
-  " (from the album '" + playlist.items[index].track.album.name + "') #Shoegaze #Dreampop #Bot " +
-  playlist.items[index].track.external_urls.spotify;
+         " (from the album '" + playlist.items[index].track.album.name + "') #Shoegaze #Dreampop #Bot " +
+         playlist.items[index].track.external_urls.spotify;
 }
 
 // Main function to execute on AWS Lambda
