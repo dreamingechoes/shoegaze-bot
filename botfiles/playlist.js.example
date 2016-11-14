@@ -1,0 +1,5 @@
+module.exports = {
+  // Your Spotify playlist info.
+  // You can get it from: https://developer.spotify.com/web-api/console/get-playlist-tracks
+  // Complete the fields of the form, and paste here the complete JSON structure returned by Spotify's API
+}
