@@ -42,6 +42,7 @@ jspm_packages
 # Optional npm cache directory
 .npm
 dist
+dist.zip
 
 # Optional eslint cache
 .eslintcache
