@@ -1,4 +1,5 @@
 var gulp = require('gulp');
+var mocha = require('gulp-mocha');
 var zip = require('gulp-zip');
 var del = require('del');
 var install = require('gulp-install');
@@ -11,7 +12,7 @@ gulp.task('clean', function() {
 });
 
 gulp.task('js', function() {
-  // This is the name of your main function file
+  // This is the name of our main function file
   return gulp.src('index.js')
              .pipe(gulp.dest('dist/'));
 });
@@ -28,7 +29,17 @@ gulp.task('zip', function() {
              .pipe(gulp.dest('./'));
 });
 
-// This task doesn't run in the deploy pipeline
+gulp.task('test', function() {
+  return gulp.src('test/test.js')
+             .pipe(mocha())
+             .once('error', function() {
+               process.exit(1);
+             })
+             .once('end', function() {
+               process.exit();
+             });
+});
+
 gulp.task('lint', function() {
   return gulp.src('index.js')
              .pipe(jshint())
