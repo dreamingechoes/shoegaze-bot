@@ -11,6 +11,15 @@ gulp.task('clean', function() {
   return del(['./dist', './dist.zip']);
 });
 
+var filesToMove = [
+  './botfiles/**/*.js',
+  './botfiles/**/*.json'
+];
+gulp.task('move', ['clean'], function(){
+  gulp.src(filesToMove, { base: './' })
+  .pipe(gulp.dest('dist'));
+});
+
 gulp.task('js', function() {
   // This is the name of our main function file
   return gulp.src('index.js')
@@ -53,6 +62,7 @@ gulp.task('upload', function(callback) {
 gulp.task('deploy', function(callback) {
   return runSequence(
     ['clean'],
+    ['move'],
     ['js', 'node-mods'],
     ['zip'],
     ['upload'],
