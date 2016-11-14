@@ -4,7 +4,7 @@
 
 ShoegazeBot is a (work in progress) simple Twitter bot that send a new tweet everyday with a new shoegaze song. Made in Node.js and hosted in AWS Lambda. All the songs tweetted are extracted from the info contained on the website [shoegaze.pw](http://shoegaze.pw)
 
-![Shoegaze.pw](shoegaze.pw/source/assets/images/screenshot.png)
+![Shoegaze.pw](http://shoegaze.pw/source/assets/images/screenshot.png)
 
 You can follow the bot on Twitter: https://twitter.com/ShoegazeBot_
 
